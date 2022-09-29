@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <fieldset>
+          <style>
+            body{
+                background: url(./images/pexels-content-pixie-2736499.jpg);
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+                height: 100%;
+                color: rgb(15, 11, 11);
+                background-attachment: fixed;
+            }
+            div{
+                background-color: gray;
+                width: fit-content;
+                position: sticky;
+                border-radius: 5px;     
+            }
+            
+
+        </style>  
+        
+        <h1></h1>
+        <input type="text" placeholder="add an item">
+        <button id="clearBtn"></button>
+    </fieldset>
+    <ol>
+        <!-- <li>hello world</li> -->
+    </ol>
+    <h2></h2>
+    <div>        
+    </div>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.js"></script> -->
+    <script src="./jquery cdn/jquery.js"></script>
+    <script>
+        // DECLARATIONS
+        let docBody= $('body');        
+        let createBtn=$('#createBtn');
+        let clearBtn=$('#clearBtn');
+        let input=$('input')
+        let background= new Image ('./images/background.jpg')
+        let header2=$('h2');
+
+        // STYLINGS
+
+        // docBody.css({background :background});
+        $('fieldset').css({margin:'10%', padding:'30px', textAlign:'center', borderRadius:'20px', border:'2px ridge grey'})
+        input.css({marginRight:'20px'})
+        input.mouseenter(()=>{
+            input.css({background:'rgb(25, 11, 11)', color:'white'})
+        })
+        input.mouseleave(()=>{
+            input.css({background:'white', color:'initial'})
+        });
+        $('input').css({padding:'1%', borderRadius:'50px'})
+        
+        
+
+
+        // INNERTEXTS
+        createBtn.html('Submit');
+        clearBtn.html('Clear list');
+        $('h1').html('TO-DO-LIST');
+        header2.html('TO DO:');
+        $('div').html();
+        // $('h2').html('Goals')
+
+        // Actions or Events
+        createBtn.click(()=>{
+            $('ol').append('<h2>' + 'hi' + '</h2>');
+           });
+        input.change((e)=>{
+            e.preventDefault();
+          let append= $('ol').append('<li>'+e.target.value+'</li>');
+          $('div').html(append);
+           
+        });
+        clearBtn.click((e)=>{
+            $('ol').empty('<li>'+e.target.value+'</li>')
+
+        });
+        
+
+
+
+    </script>
+</body>
+</html>
